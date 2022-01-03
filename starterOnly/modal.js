@@ -13,6 +13,12 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCls = document.querySelectorAll(".close");
 
+const firstName = document.getElementById("#first");
+const lastName = document.getElementById("#last");
+const eMail = document.getElementById("#email");
+const birthDate = document.getElementById("#birthdate");
+const nbTournament = document.getElementById("#quantity");
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 

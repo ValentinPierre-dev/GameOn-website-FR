@@ -12,8 +12,8 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCls = document.querySelectorAll(".close");
+const modalSub = document.getElementsByClassName("btn-submit");
 
-const textControl = document.querySelectorAll(".text-control");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const eMail = document.getElementById("email");
@@ -21,12 +21,18 @@ const birthDate = document.getElementById("birthdate");
 const nbTournament = document.getElementById("quantity");
 
 const firstError = document.getElementById("first-error");
+const lastError = document.getElementById("last-error");
+const mailError = document.getElementById("mail-error");
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // Close modal event
 modalCls.forEach((cls) => cls.addEventListener("click", closeModal));
+
+firstName.addEventListener("focusout", validateFirstName);
+lastName.addEventListener("focusout", validateLastName);
+eMail.addEventListener("focusout", validateMail);
 
 // launch modal form
 function launchModal() {
@@ -38,35 +44,44 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
-// Validate Inputs
-function validateTxtCtrl() {
-  if (textControl.value !== null){
-    return true;
-  }
-  else {
-    alert("Merci de remplir les champs obligatoires");
-    return false;
-  }
-}
-
+// Validate First Name
 function validateFirstName() {
   if (firstName.value.length >= 2) {
+    firstName.style.border = "3px solid #279E7A";
     firstError.innerText = "";
     return true;
   }
   else {
+    firstName.style.border = "2px solid red";
     firstError.innerText = "Merci de rentrer au moins 2 caractères";
     return false;
   }
 }
 
+// Validate Last Name
 function validateLastName() {
   if (lastName.value.length >= 2) {
-    firstError.innerText = "";
+    lastName.style.border = "3px solid #279E7A";
+    lastError.innerText = "";
     return true;
   }
   else {
-    firstError.innerText = "Merci de rentrer au moins 2 caractères";
+    lastName.style.border = "2px solid red";
+    lastError.innerText = "Merci de rentrer au moins 2 caractères";
+    return false;
+  }
+}
+
+// Validate E-Mail
+function validateMail() {
+  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(eMail.value)) {
+    eMail.style.border = "3px solid #279E7A";
+    mailError.innerText = "";
+    return true;
+  }
+  else {
+    eMail.style.border = "2px solid red";
+    mailError.innerText = "Merci de rentrer une adresse mail valide";
     return false;
   }
 }
@@ -74,11 +89,10 @@ function validateLastName() {
 // Validate Form
 function validate(e) {
   e.preventDefault();
-  //validateTxtCtrl();
   const firstNameIsValid = validateFirstName();
-  validateLastName();
-  if (firstNameIsValid){
+  const lastNameIsValid = validateLastName();
+  const eMailIsValid = validateMail();
+  if (firstNameIsValid && lastNameIsValid && eMailIsValid){
     alert ("Inscription envoyée");
   }
 }
-

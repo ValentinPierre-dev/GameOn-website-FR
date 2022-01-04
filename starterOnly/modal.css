@@ -186,6 +186,11 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+  display: block;
+}
+
+.modal-valid {
+  display: none;
 }
 
 label {
@@ -321,10 +326,10 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+
 .btn-submit,
 .btn-signup {
   background: #fe142f;
-  opacity: 1;
   display: block;
   margin: 0 auto;
   border-radius: 7px;

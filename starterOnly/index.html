@@ -47,7 +47,7 @@
         <div class="hero-img">
           <img src="./bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">
+        <button class="btn-signup modal-btn" id="suscribe-btn">
           je m'inscris
         </button>
       </div>
@@ -55,8 +55,9 @@
       <div class="bground">
         <div class="content">
           <span class="close"></span>
-          <div class="modal-body">
+          <div class="modal-body" id="modal-content">
             <form
+              id="suscribe-form"
               name="reserve"
               action="index.html"
               method="get"
@@ -190,7 +191,6 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
@@ -207,16 +207,12 @@
               <small class="error" id="checkbox-error"></small>
               <input
                 class="btn-submit"
+                id="disable-btn"
                 type="submit"
                 class="button"
                 value="C'est parti"
               />
             </form>
-          </div>
-          <div class="modal-valid">
-            <button class="btn-submit" class="button">
-              Merci !
-            </button>
           </div>
         </div>
       </div>

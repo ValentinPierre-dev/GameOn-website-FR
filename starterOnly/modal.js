@@ -13,8 +13,10 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalCls = document.querySelectorAll(".close");
 const modalBody = document.querySelectorAll(".modal-body");
-const modalValid = document.querySelectorAll(".modal-valid");
-const modalSub = document.querySelectorAll(".btn-submit");
+const modalSub = document.getElementById("disable-btn");
+const suscribeBtn = document.getElementById("suscribe-btn");
+
+const modalCont = document.getElementById("modal-content");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -49,7 +51,7 @@ eMail.addEventListener("change", validateMail);
 birthDate.addEventListener("change", validateBirthDate);
 nbTournament.addEventListener("change", validateTournament);
 
-modalSub.addEventListener("click", validate(e));
+suscribeBtn.addEventListener("click", disableModal);
 
 // launch modal form
 function launchModal() {
@@ -112,7 +114,7 @@ function validateBirthDate() {
   }
   else {
     birthDate.style.border = "2px solid red";
-    birthError.innerText = "Vous devez entrer votre date de naissance.";
+    birthError.innerText = "Vous devez entrer une date de naissance valide.";
     return false;
   }
 }
@@ -165,7 +167,23 @@ function validate(e) {
   const nbTournamentIsValid = validateTournament();
   const locationsIsValid = validateLocations();
   const checkboxIsValid = validateCheckbox();
+  const suscribeForm = document.getElementById("suscribe-form");
   if (firstNameIsValid && lastNameIsValid && eMailIsValid && birthDateIsValid && nbTournamentIsValid && locationsIsValid && checkboxIsValid){
-    alert("Incription validée");
+    modalCont.innerHTML = "Merci ! Votre réservation a été reçue.";
+    suscribeForm.reset();
+  }
+}
+
+// Disable submit button
+function disableModal() {
+  const firstNameIsValid = validateFirstName();
+  const lastNameIsValid = validateLastName();
+  const eMailIsValid = validateMail();
+  const birthDateIsValid = validateBirthDate();
+  const nbTournamentIsValid = validateTournament();
+  const locationsIsValid = validateLocations();
+  const checkboxIsValid = validateCheckbox();
+  if (firstNameIsValid && lastNameIsValid && eMailIsValid && birthDateIsValid && nbTournamentIsValid && locationsIsValid && checkboxIsValid){
+    modalSub.style.opacity = "0.2";
   }
 }

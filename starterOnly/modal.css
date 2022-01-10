@@ -539,12 +539,16 @@ footer {
   font-weight: 1000;
 }
 
-#suscribe-btn{
+#suscribe-btn {
   cursor: pointer;
 }
 
-#disable-btn{
+#disable-btn {
   opacity: 0.2;
+}
+
+#success {
+  display: none;
 }
 
 @keyframes headshake {

@@ -39,12 +39,16 @@ const tournamentError = document.getElementById("tournament-error");
 const locationError = document.getElementById("location-error");
 const checkboxError = document.getElementById("checkbox-error");
 
+// The form's HTML is stored
+const old = modalCont.innerHTML;
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // Close modal event
 modalCls.forEach((cls) => cls.addEventListener("click", closeModal));
 
+// Inputs validation in real time
 firstName.addEventListener("change", validateFirstName);
 firstName.addEventListener("change", enableBtn);
 
@@ -78,6 +82,7 @@ function launchModal() {
 // Close modal form
 function closeModal() {
   modalbg.style.display = "none";
+  modalCont.innerHTML = old;
 }
 
 // Validate First Name
@@ -191,7 +196,6 @@ function validate(e) {
   const checkboxIsValid = validateCheckbox();
   if (firstNameIsValid && lastNameIsValid && eMailIsValid && birthDateIsValid && nbTournamentIsValid && locationsIsValid && checkboxIsValid){
     modalCont.innerHTML = "Merci ! Votre réservation a été reçue.";
-    suscribeForm.reset();
   }
 }
 

@@ -96,9 +96,6 @@ img {
     margin-top: 5%;
     text-align: center;
   }
-  #success .btn-submit {
-    margin-top: 20%;
-  }
 }
 
 
@@ -560,6 +557,11 @@ footer {
 
 #success {
   display: none;
+}
+
+#success .btn-submit {
+  margin-top: 20%;
+  cursor: pointer;
 }
 
 @keyframes headshake {

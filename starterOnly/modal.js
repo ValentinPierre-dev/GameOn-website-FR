@@ -49,9 +49,6 @@ const tournamentError = document.getElementById("tournament-error");
 const locationError = document.getElementById("location-error");
 const checkboxError = document.getElementById("checkbox-error");
 
-// The form's HTML is stored
-const old = modalCont.innerHTML;
-
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
@@ -128,7 +125,8 @@ function validateLastName() {
 
 // Validate E-Mail
 function validateMail() {
-  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(eMail.value)) {
+  const mailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  if (mailRegex.test(eMail.value)) {
     eMail.style.border = borderSuccess;
     mailError.innerText = "";
     return true;
@@ -160,7 +158,8 @@ function validateBirthDate() {
 
 // Validate Tournament quantity
 function validateTournament() {
-  if (/^[1-9][0-9]?$/.test(nbTournament.value)) {
+  const nbRegex = /^[0-9][0-9]?$/;
+  if (nbRegex.test(nbTournament.value)) {
     nbTournament.style.border = borderSuccess;
     tournamentError.innerText = "";
     return true;

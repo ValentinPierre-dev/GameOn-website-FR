@@ -88,6 +88,17 @@ img {
     display: block;
     text-align: left;
   }
+  .content {
+    min-height: 100%;
+    margin: 0% auto !important;
+  }
+  #success {
+    margin-top: 5%;
+    text-align: center;
+  }
+  #success .btn-submit {
+    margin-top: 20%;
+  }
 }
 
 

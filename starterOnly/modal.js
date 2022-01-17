@@ -20,7 +20,7 @@ const limitYear = 1920;
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const modalCls = document.querySelectorAll(".close");
+const modalCls = document.querySelectorAll(".cls");
 const modalBody = document.querySelectorAll(".modal-body");
 const success = document.getElementById("success");
 

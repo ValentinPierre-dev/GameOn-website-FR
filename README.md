@@ -1,6 +1,7 @@
 # GameOn project
 
 ![JavaScript](https://img.shields.io/badge/Language-JS-yellow)
+![CSS](https://img.shields.io/badge/Language-CSS-yellow)
 
 ## About
 GameOn is a company specialized in conferences and game competitions. The objective was to develop a landing page allowing users to register for an E-Sport tournament using a form verified by JavaScript scripts.

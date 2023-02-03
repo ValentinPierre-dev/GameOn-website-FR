@@ -1,5 +1,9 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# GameOn project
+
+![JavaScript](https://img.shields.io/badge/Language-JS-yellow)
+
+## About
+GameOn is a company specialized in conferences and game competitions. The objective was to develop a landing page allowing users to register for an E-Sport tournament using a form verified by JavaScript scripts.
+
+## How to use
+Just download the project and execute index.html on live server.
